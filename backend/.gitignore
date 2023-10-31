@@ -1,0 +1,27 @@
+# Node.js
+node_modules/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Optional: Environment specific files
+.env
+
+# Dependency directories
+/jspm_packages/
+/bower_components/
+
+# Webpack generated files
+/dist/
+/build/
+
+# IDE-specific files
+.idea/
+
+# Visual Studio Code settings
+.vscode/
