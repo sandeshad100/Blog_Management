@@ -1,16 +1,34 @@
+import { User } from "../model/userModel.js";
+
 export const register = async (req, res, next) => {
   try {
     console.log("Register API Called:");
-    const { name, email, password } = req.body;
+    const { name, email, number, password } = req.body;
 
     console.log(name, email, password);
-    // let user = await User.findOne({ email });
+    if (!email || !password || !number || !name) {
+      return res.status(400).json({
+        message: "Please provide email,password,phoneNumber",
+      });
+    }
+    // check if that email user already exist or not
+    const userFound = await User.find({ userEmail: email });
+    if (userFound.length > 0) {
+      return res.status(400).json({
+        message: "User with that email already registered",
+      });
+    }
+    // else
+    await User.create({
+      userName: name,
+      userPhoneNumber: number,
+      userEmail: email,
+      userPassword: password,
+    });
 
-    // if (user) return next(new ErrorHandler("User already exists", 400));
-
-    // const hashedPassword = await bcrypt.hash(password, 10);
-    // user = await User.create({ name, email, password: hashedPassword });
-    // sendCookie(user, res, "Registered Successfully", 201);
+    res.status(201).json({
+      message: "User registered successfully",
+    });
   } catch (error) {
     next(error);
   }

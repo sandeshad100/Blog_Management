@@ -2,10 +2,16 @@
 
 // Require the Express module
 import express from "express";
+import { config } from "dotenv";
+import { connectDB } from "./database/db.js";
 import userRouter from "./routes/user.js";
 
 const app = express();
+config({
+  path: "./database/config.env",
+});
 app.use(express.json());
+connectDB();
 // Define a route
 app.get("/", (req, res) => {
   res.send("Hello, Express!");
