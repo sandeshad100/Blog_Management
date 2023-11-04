@@ -12,6 +12,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { NavLink } from "react-router-dom";
 
 function Copyright(props) {
   return (
@@ -22,9 +23,9 @@ function Copyright(props) {
       {...props}
     >
       {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{" "}
+      <NavLink color="inherit" to={"/"}>
+        {"BlogLine  "}
+      </NavLink>{" "}
       {new Date().getFullYear()}
       {"."}
     </Typography>
@@ -108,9 +109,9 @@ export default function Login() {
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2">
+                <NavLink to={"/register"} variant="body2">
                   {"Don't have an account? Sign Up"}
-                </Link>
+                </NavLink>
               </Grid>
             </Grid>
           </Box>

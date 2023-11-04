@@ -124,7 +124,7 @@ export default function Layout() {
     <ThemeProvider theme={defaultTheme}>
       <CssBaseline />
       <Container maxWidth="lg">
-        <Header title="Blog" sections={sections} />
+        <Header title="BlogLine" sections={sections} />
         <main>
           <Outlet />
           {/* <MainFeaturedPost post={mainFeaturedPost} /> */}
@@ -136,8 +136,8 @@ export default function Layout() {
         </main>
       </Container>
       <Footer
-        title="Footer"
-        description="Something here to give the footer a purpose!"
+        title="BlogLine, Made with LOVE by Sandesh Adhikari"
+        description="Why dont you write a blog on What to write on a Footer!"
       />
     </ThemeProvider>
   );

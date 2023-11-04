@@ -11,11 +11,11 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route path="" element={<Home />} />
+            <Route index path="" element={<Home />} />
+            <Route path="blogview" element={<BlogView />}></Route>
           </Route>
           <Route path="register" element={<Register />}></Route>
           <Route path="login" element={<Login />}></Route>
-          <Route path="blogview" element={<BlogView />}></Route>
         </Routes>
       </Router>
     </>

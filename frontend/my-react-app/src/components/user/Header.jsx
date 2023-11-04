@@ -6,48 +6,36 @@ import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
+import SignUp from "./layoutComponents/SignUp";
+import Title from "./layoutComponents/Title";
+import { Box } from "@mui/material";
 
 function Header(props) {
-  const sections = [
-    {
-      title: "Technology",
-      url: "/blog/category/technology", // Adjust the URL as needed
-    },
-    {
-      title: "Travel",
-      url: "/blog/category/travel", // Adjust the URL as needed
-    },
-    {
-      title: "Food",
-      url: "/blog/category/food", // Adjust the URL as needed
-    },
-    // Add more categories as needed
-  ];
-  const title = "BlogLine";
+  const { sections, title } = props;
 
   return (
     <React.Fragment>
-      <Toolbar sx={{ borderBottom: 1, borderColor: "divider" }}>
-        <Button size="small">Subscribe</Button>
-        <Typography
-          component="h2"
-          variant="h5"
-          color="inherit"
-          align="center"
-          noWrap
-          sx={{ flex: 1 }}
-        >
-          {title}
-        </Typography>
-        <IconButton>
+      <Toolbar
+        sx={{
+          borderBottom: 1,
+          borderColor: "divider",
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+        }}
+      >
+        {/* <Button size="small">Subscribe</Button> */}
+        <Box>
+          <Title title="BlogLine" />
+        </Box>
+        {/* <IconButton>
           <SearchIcon />
-        </IconButton>
-        <Button variant="outlined" size="small">
-          Sign up
-        </Button>
+        </IconButton> */}
+        <Box>
+          <SignUp />
+        </Box>
       </Toolbar>
       <Toolbar
-        component="nav"
         variant="dense"
         sx={{ justifyContent: "space-between", overflowX: "auto" }}
       >
