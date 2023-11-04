@@ -9,6 +9,7 @@ import Link from "@mui/material/Link";
 import SignUp from "./layoutComponents/SignUp";
 import Title from "./layoutComponents/Title";
 import { Box } from "@mui/material";
+import { NavLink } from "react-router-dom";
 
 function Header(props) {
   const { sections, title } = props;
@@ -26,13 +27,28 @@ function Header(props) {
       >
         {/* <Button size="small">Subscribe</Button> */}
         <Box>
-          <Title title="BlogLine" />
+          <NavLink to={""} style={{ textDecoration: "none" }}>
+            <Typography
+              component="h2"
+              variant="h5"
+              color="inherit"
+              align="center"
+              noWrap
+              sx={{ flex: 1, textDecoration: "none" }}
+            >
+              {title}
+            </Typography>
+          </NavLink>
         </Box>
         {/* <IconButton>
           <SearchIcon />
         </IconButton> */}
         <Box>
-          <SignUp />
+          <NavLink to={"login"}>
+            <Button variant="outlined" size="small">
+              Login
+            </Button>
+          </NavLink>
         </Box>
       </Toolbar>
       <Toolbar
